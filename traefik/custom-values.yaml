@@ -1,0 +1,25 @@
+
+# values-custom.yaml
+# Create an IngressRoute for the dashboard
+ingressRoute:
+  dashboard:
+    enabled: false # 禁用 helm 中渲染的 dashboard，后面手动创建
+
+# Configure ports
+ports:
+  web:
+    port: 8000
+    nodePort: 30080 # 使用 NodePort 模式
+  websecure:
+    port: 8443
+    nodePort: 30443
+
+# Service
+service:
+  enabled: true
+  type: NodePort # 使用 NodePort 模式
+
+# Logs
+logs:
+  general:
+    level: DEBUG
